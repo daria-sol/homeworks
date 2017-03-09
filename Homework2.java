@@ -85,7 +85,7 @@ public class Homework2 {
         успешная, false иначе. */
     public static boolean cigarParty(int cigar, boolean weekend) {
 
-        if ((cigar > 40 && cigar < 60) || weekend == true) {
+        if ((cigar > 40 && cigar < 60) || ((weekend == true)&& (cigar>40))) {
             return true;
         } else {
             return false;
