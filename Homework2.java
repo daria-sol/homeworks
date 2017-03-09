@@ -71,9 +71,6 @@ public class Homework2 {
         //для 11 задачи
         System.out.print("for 11 exercise: ");
         System.out.println(loneSum(1, 5, 1));
-        /*luckySum(1, 2, 3) → 6
-luckySum(1, 2, 13) → 3
-luckySum(1, 13, 3) → 1*/
         //для 12 задачи
         System.out.print("for 12 exercise: ");
         System.out.println(luckySum(3, 24, 13));
