@@ -21,7 +21,7 @@ public class Homework3 {
         return factorial(n - 1) * n;
     }
 
-    /*2. Вычислить степень числа.*/
+    /*2. Вычислить степень числа. Считаем a^b*/
     public static int power(int a, int b) {
         if (b == 0) {
             return 1;
@@ -31,11 +31,8 @@ public class Homework3 {
 
     /*3. Есть зайцы, стоящие в ряд, пронумерованные 1, 2, …, n. У нечетных зайцев
 по 2 уха, у четных по 3 уха, так как они из Чернобыля. Вычислить количество
-ушей в ряду кроликов.
+ушей в ряду кроликов.*/
 
-bunnyEars2(0) → 0
-bunnyEars2(1) → 2
-bunnyEars2(2) → 5*/
     public static int bunnyEars(int bunny) {
         if (bunny == 0) {
             return 0;
@@ -47,18 +44,13 @@ bunnyEars2(2) → 5*/
     /*4. Посчитать сумму цифр числа n. Замечание: остаток от деления (%)
 на 10 дает в результате самую правую цифру числа (126 % 10 == 6),
 а при деление (/) на 10, последняя цифра отпадает из за приведения 
-типов (126 / 10 == 12).
+типов (126 / 10 == 12).*/
 
-sumDigits(126) → 9
-sumDigits(49) → 13
-sumDigits(12) → 3*/
     public static int sumDigits(int n) {
         if (n == 0) {
             return 0;
         }
         return n < 10 ? n : n % 10 + sumDigits(n / 10);
     }
-
-  
-   
+    
 }
