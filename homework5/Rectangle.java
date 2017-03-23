@@ -17,7 +17,7 @@ public class Rectangle {
     double height;
     double width;
 
-    // This is the constructor for Rectangle.
+   
     Rectangle(double w, double h) {
         if (w < 0 || h < 0) {
             System.out.println("Error. Incorrect value of width"
@@ -27,7 +27,7 @@ public class Rectangle {
         this.height = h;
     }
 
-    // compute and return square
+    
     double area() {
         return width * height;
     }
