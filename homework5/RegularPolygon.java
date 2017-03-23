@@ -10,8 +10,9 @@ package homework5;
 окружности.
 С использованием построенного класса создайте семиугольник со стороной 6.
 Вычилите с помощью метода и выведите на экран радиус и модуль их суммы.*/
-public class RegularPolygon {
+public class RegularPolygon extends Figure{
 
+    String name="regular polygon";
     int numberSides;
     double lengthSide;
     final double Pi = 3.14;
