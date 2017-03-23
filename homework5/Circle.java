@@ -11,8 +11,9 @@ package homework5;
 (0;0) и радиусом 12, а вторую с центром в (3;5) и радиусом 11. Проверьте
 с помощью созданного метода равна ли их площадь и если равна, то выведите 
 соответсвующее сообщение на экран.*/
-public class Circle {
+public class Circle extends Figure{
 
+    String name="circle";
     int coordinateX, coordinateY;
     double radius;
     final double Pi = 3.14;
