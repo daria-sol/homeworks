@@ -15,7 +15,7 @@ public class Circle {
 
     int coordinateX, coordinateY;
     double radius;
-    final double Pi=3.14;
+    final double Pi = 3.14;
     Circle(int x, int y, double r) {
         if (r <= 0) {
             System.out.println("Error. Incorrect value of radius");
