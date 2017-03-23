@@ -25,7 +25,7 @@ public class Circle {
         this.radius = r;
     }
     double circleSquare(){
-        return Pi*radius*radius;
+        return Pi * radius * radius;
     }
     void equalCircleSquare(double area1, double area2) {
         if (area1 == area2) {
