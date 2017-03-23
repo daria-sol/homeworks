@@ -20,7 +20,7 @@ public class RegularPolygon {
     RegularPolygon(int n, double l) {
         if (n < 3 || l <= 0) {
             System.out.println("Error. Incorrect value of number of "
-                    + "sides/length/radius");
+                    + "sides/length");
         }
         this.numberSides = n;
         this.lengthSide = l;
