@@ -12,8 +12,10 @@ package homework5;
 3 и 8 и второй прямоугольник со сторонами 6 и 4. Проверьте с помощью созданного
 метода равны ли прямоугольники по площади и если да, то выведите соответсвующее
 сообщение на экран.*/
-public class Rectangle {
 
+public class Rectangle extends Figure {
+
+    String name="rectangle";
     double height;
     double width;
 
