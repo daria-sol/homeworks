@@ -1,53 +1,44 @@
-
 package store;
 
 import java.util.Random;
-import static store.Check.getProductInCheck;
-import static store.Seller.getSum;
-import static store.Store.getRandomNumber;
-import static store.Store.productsInTheStore;
-
 
 public class Main {
-public static void main(String[] args) {
 
-        Random r = new Random();
-        int randomNumber = getRandomNumber(500);
-         System.out.println();
+    public static void main(String[] args) {
+
+        Store store1 = new Store();
+        int randomNumber = store1.getRandom();
+
+        System.out.println();
+        System.out.println("We have these products in our store:");
         Product[] prod = new Product[randomNumber];
-        
-        int[] inStore = productsInTheStore(prod, randomNumber);
-        System.out.println();
-        Check check1 = new Check();
 
-        int randomCheck = check1.randomCheckNumber(randomNumber);
-        if (randomCheck < randomNumber) {
-            System.out.println("random check number = "
-                    + randomCheck);
-        } else {
-            System.out.println("random check number = "
-                    + randomCheck + ". We haven't got some products.");
-            randomCheck = 0;
+        int[] inStore = store1.productsInTheStore(prod, randomNumber);
+        System.out.println("-------------------");
+        int storeSum = store1.getSum(inStore);
+        System.out.println();
+
+        Seller seller1 = new Seller();
+        int numberOfChecks = seller1.getRandom();
+        System.out.println();
+
+        Check[] checks = new Check[numberOfChecks];
+        int[] randomChecksNumber = new int[numberOfChecks];
+        int[] inChecks = new int[numberOfChecks];
+        int[] checksSum = new int[numberOfChecks];
+        for (int i = 0; i < numberOfChecks; i++) {
+            checks[i] = new Check();
+            randomChecksNumber[i] = checks[i].getRandom();
+            System.out.println("We have these products in our " + (i + 1)
+                    + " check:");
+            inChecks = checks[i].getProductInCheck(prod, randomChecksNumber[i]);
+            System.out.println("-------------------");
+            checksSum[i] = checks[i].getSum(inChecks);
+            System.out.println();
         }
-        System.out.println();
 
-        int[] numberOfProduct = new int[6];
-        for (int i = 0; i < 6; i++) {
-            numberOfProduct[i] = inStore[i];
-        }
-       
-        int inCheck[] = getProductInCheck(numberOfProduct, randomCheck, inStore[0], 
-                inStore[1], inStore[2], inStore[3], inStore[4], inStore[5]);
+        seller1.getAllSum(seller1.getSum(checksSum), storeSum);
 
-        System.out.println();
-        
-        //our check sum
-        getSum("check",inCheck[0], inCheck[1], inCheck[2], inCheck[3], inCheck[4],
-                inCheck[5]);
-       
-        //our store sum
-        getSum("store",inStore[0], inStore[1], inStore[2], inStore[3], inStore[4], 
-                inStore[5]);
     }
 
 }

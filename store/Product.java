@@ -1,6 +1,4 @@
-
 package store;
-
 
 public enum Product {
     Fruits(5),
@@ -15,7 +13,8 @@ public enum Product {
     Product(int p) {
         price = p;
     }
-     public int getPrice() {
+
+    public int getPrice() {
         return price;
     }
 }
