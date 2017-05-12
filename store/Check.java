@@ -1,46 +1,51 @@
 package store;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Check implements Summary {
 
-    @Override
-    public int getRandom() {
-        Random r = new Random();
-        int randomCheckNumber = r.nextInt(100);
-        System.out.println("Random check number is: " + randomCheckNumber);
-        return randomCheckNumber;
+    Random r = new Random();
+    int randomCheckNumber = r.nextInt(10);
+    List<Products.ProductType> ourProductsInTheCheck = new ArrayList<>();
+
+    Check() {
+        for (int i = 0; i < randomCheckNumber; i++) {
+
+            ourProductsInTheCheck.add(Products.ProductType.values()[r.nextInt(Products.ProductType.values().length - 1)]);
+
+        }
+    }
+
+    public void printProductsInTheCheck() {
+        for (int i = 0; i < randomCheckNumber; i++) {
+
+            System.out.println(ourProductsInTheCheck.get(i));
+        }
     }
 
     @Override
-    public int getSum(int a[]) {
+    public int getSum() {
         int sum = 0;
-        for (Product p : Product.values()) {
-            sum += p.getPrice() * a[p.ordinal()];
+        for (Products.ProductType p : ourProductsInTheCheck) {
+            sum += p.getPrice();
         }
-        System.out.println("Our check's sum is: " + sum);
         return sum;
     }
 
-    public int[] getProductInCheck(Product[] prod,
-            int randomNumber) {
-        prod = new Product[randomNumber];
-        int[] eachProduct = new int[6];
-        Random r = new Random();
-
-        for (int i = 0; i < randomNumber; i++) {
-            prod[i] = Product.values()[r.nextInt(Product.values().length)];
-            for (Product p : Product.values()) {
-                if (prod[i] == p) {
-                    eachProduct[p.ordinal()] = eachProduct[p.ordinal()] + 1;
-                }
+    public int getProductSum(Products.ProductType product) {
+        int sum = 0;
+        for (Products.ProductType p : ourProductsInTheCheck) {
+            if (p == product) {
+                sum += product.getPrice();
             }
         }
-        for (Product p : Product.values()) {
-            System.out.println(p + " are: " + eachProduct[p.ordinal()]);
-        }
-
-        return eachProduct;
+        return sum;
     }
 
+    public int getIdNumber(Products product) {
+        int idNumber = product.getId();
+        return idNumber;
+    }
 }

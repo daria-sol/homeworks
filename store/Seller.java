@@ -1,43 +1,55 @@
 package store;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Seller implements Summary {
 
-    @Override
-    public int getRandom() {
-        Random r = new Random();
-        int NumberOfChecks = r.nextInt(100);
-        System.out.println("Our seller have " + NumberOfChecks + " checks:");
-        return NumberOfChecks;
-    }
+    Random r = new Random();
+    int numberOfChecks = r.nextInt(20);
+    List<Check> checks = new ArrayList<>();
+    Store store = new Store();
 
-    @Override
-    public int getSum(int[] a) {
-        int sum = 0;
-        for (int i = 0; i < a.length; i++) {
-            sum += a[i];
+    Seller() {
+        for (int i = 0; i < numberOfChecks; i++) {
+            checks.add(new Check());
         }
-        System.out.println("All checks sum is: " + sum);
-        return sum;
-
     }
 
-    public int getAllSum(int a, int b) {
-        System.out.println("All sum is: " + (a + b));
-        return a + b;
-    }
-
-    /*public int getProductSum(Product ourProduct, int inStore, int inChecks) {
-        int sum = 0;
-        int s = 0;
-        for (Product p : Product.values()) {
-            if (ourProduct == p) {
-                s = ourProduct.getPrice();
-            }
-            sum = (inStore + inChecks) * s;
+    public void printProductsInTheChecks() {
+        System.out.println("We have " + numberOfChecks + " checks");
+        for (int i = 0; i < numberOfChecks; i++) {
+            System.out.println("We have these products in our " + (i + 1)
+                    + " check:");
+            checks.get(i).printProductsInTheCheck();
+            System.out.println("-------------------");
         }
-        System.out.println("Sum of " + ourProduct + " is: " + sum);
-        return sum;
-    }*/
+    }
+
+    public int getSumInChecks() {
+        int sumInChecks = 0;
+
+        for (Check check : checks) {
+            sumInChecks += check.getSum();
+        }
+        return sumInChecks;
+
+    }
+
+    @Override
+    public int getSum() {
+        return getSumInChecks() + store.getSum();
+
+    }
+
+    public int getProductSum(Products.ProductType product) {
+        int productPrice1 = 0;
+
+        for (Check check : checks) {
+            productPrice1 += check.getProductSum(product);
+
+        }
+        return productPrice1 + store.getProductSum(product);
+    }
 }
