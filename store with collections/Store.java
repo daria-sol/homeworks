@@ -8,12 +8,12 @@ public class Store implements Summary {
 
     Random r = new Random();
     int randomNumber = r.nextInt(50);
-    List<Products.ProductType> ourProductsInTheStore = new ArrayList<>();
+    List<ProductType> ourProductsInTheStore = new ArrayList<>();
 
     Store() {
         for (int i = 0; i < randomNumber; i++) {
 
-            ourProductsInTheStore.add(Products.ProductType.values()[r.nextInt(Products.ProductType.values().length - 1)]);
+            ourProductsInTheStore.add(ProductType.values()[r.nextInt(ProductType.values().length - 1)]);
 
         }
     }
@@ -28,15 +28,15 @@ public class Store implements Summary {
     @Override
     public int getSum() {
         int sum = 0;
-        for (Products.ProductType p : ourProductsInTheStore) {
+        for (ProductType p : ourProductsInTheStore) {
             sum += p.getPrice();
         }
         return sum;
     }
 
-    public int getProductSum(Products.ProductType product) {
+    public int getProductSum(ProductType product) {
         int sum = 0;
-        for (Products.ProductType p : ourProductsInTheStore) {
+        for (ProductType p : ourProductsInTheStore) {
             if (p == product) {
                 sum += p.getPrice();
             }

@@ -43,7 +43,7 @@ public class Seller implements Summary {
 
     }
 
-    public int getProductSum(Products.ProductType product) {
+    public int getProductSum(ProductType product) {
         int productPrice1 = 0;
 
         for (Check check : checks) {

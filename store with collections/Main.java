@@ -8,15 +8,15 @@ public class Main {
 
         //create a new Seller     
         Seller seller1 = new Seller();
-        System.out.println("Sum in the store is: " + seller1.store.getSum()); 
-        System.out.println("Sum in the checks is: " + seller1.getSumInChecks()); 
+        System.out.println("Sum in the store is: " + seller1.store.getSum());
+        System.out.println("Sum in the checks is: " + seller1.getSumInChecks());
         //all sum of products
         System.out.println("All  sum is: " + seller1.getSum());
-        
+
         //sum of one of product
-        System.out.println("Sum of " + Products.ProductType.Fruits + " is: "
-                + seller1.getProductSum(Products.ProductType.Fruits));
-       
+        System.out.println("Sum of " + ProductType.Fruits + " is: "
+                + seller1.getProductSum(ProductType.Fruits));
+
         Products product = new Products();
         System.out.println("id = " + seller1.store.getIdNumber(product));
 

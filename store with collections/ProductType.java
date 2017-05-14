@@ -1,14 +1,9 @@
+
 package store;
 
-import java.util.Random;
 
-public class Products {
-
-    Random r = new Random();
-    int id;
-    ProductType type;
-    /*public enum ProductType {
-        Fruits(11),
+public enum ProductType {
+    Fruits(11),
         Vegetables(5),
         Clothing(37),
         Technics(88),
@@ -24,12 +19,4 @@ public class Products {
         public int getPrice() {
             return price;
         }
-    }*/
-    
-   
-    public int getId(){
-        id = r.nextInt();
-        return id;
-    }
-    
 }

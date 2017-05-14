@@ -8,12 +8,12 @@ public class Check implements Summary {
 
     Random r = new Random();
     int randomCheckNumber = r.nextInt(10);
-    List<Products.ProductType> ourProductsInTheCheck = new ArrayList<>();
+    List<ProductType> ourProductsInTheCheck = new ArrayList<>();
 
     Check() {
         for (int i = 0; i < randomCheckNumber; i++) {
 
-            ourProductsInTheCheck.add(Products.ProductType.values()[r.nextInt(Products.ProductType.values().length - 1)]);
+            ourProductsInTheCheck.add(ProductType.values()[r.nextInt(ProductType.values().length - 1)]);
 
         }
     }
@@ -28,15 +28,15 @@ public class Check implements Summary {
     @Override
     public int getSum() {
         int sum = 0;
-        for (Products.ProductType p : ourProductsInTheCheck) {
+        for (ProductType p : ourProductsInTheCheck) {
             sum += p.getPrice();
         }
         return sum;
     }
 
-    public int getProductSum(Products.ProductType product) {
+    public int getProductSum(ProductType product) {
         int sum = 0;
-        for (Products.ProductType p : ourProductsInTheCheck) {
+        for (ProductType p : ourProductsInTheCheck) {
             if (p == product) {
                 sum += product.getPrice();
             }
