@@ -12,28 +12,10 @@ public class Homework1 {
         System.out.println("a*b=" + mul(a,b));
         System.out.println("a/b=" + div(a,b));
 
-        // для дробных чисел
-        double x=1.05,y=0.3;
-        System.out.println("if x="+x+" "+"y="+y);
-        System.out.println("x+y=" + sumF(x,y));
-        System.out.println("x-y=" + difF(x,y));
-        System.out.println("x*y=" + mulF(x,y));
-        System.out.println("x/y=" + divF(x,y));
+
 
     }
-    //соответсвенно методы для целых
-    public static int sum(int a, int b) {
-        return a+b;
-    }
-    public static int dif(int a, int b) {
-        return a-b;
-    }
-    public static int mul(int a, int b) {
-        return a*b;
-    }
-    public static int div(int a, int b) {
-        return a/b;
-    }
+
 
     //и для дробных
     public static double sumF(double x, double y) {
