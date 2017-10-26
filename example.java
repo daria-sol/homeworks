@@ -12,13 +12,7 @@ public class Homework1 {
         System.out.println("a*b=" + mul(a,b));
         System.out.println("a/b=" + div(a,b));
 
-        // для дробных чисел
-        double x=1.05,y=0.3;
-        System.out.println("if x="+x+" "+"y="+y);
-        System.out.println("x+y=" + sumF(x,y));
-        System.out.println("x-y=" + difF(x,y));
-        System.out.println("x*y=" + mulF(x,y));
-        System.out.println("x/y=" + divF(x,y));
+
 
     }
 
