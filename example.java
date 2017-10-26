@@ -21,19 +21,7 @@ public class Homework1 {
         System.out.println("x/y=" + divF(x,y));
 
     }
-    //соответсвенно методы для целых
-    public static int sum(int a, int b) {
-        return a+b;
-    }
-    public static int dif(int a, int b) {
-        return a-b;
-    }
-    public static int mul(int a, int b) {
-        return a*b;
-    }
-    public static int div(int a, int b) {
-        return a/b;
-    }
+
 
     //и для дробных
     public static double sumF(double x, double y) {
